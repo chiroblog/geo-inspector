@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GEO Inspector</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <img class="brand-logo" src="icons/icon48.png" alt="">
+          <div>
+            <p class="overline">AI Visibility</p>
+            <h1>GEO Inspector</h1>
+          </div>
+        </div>
+        <button id="rescanButton" class="icon-button" title="Scan current page" type="button">
+          <span aria-hidden="true">&#8635;</span>
+        </button>
+      </header>
+
+      <section class="score-panel" aria-live="polite">
+        <div class="score-ring" id="scoreRing">
+          <svg class="score-ring-svg" viewBox="0 0 139 139" aria-hidden="true">
+            <circle class="score-ring-track" cx="69.5" cy="69.5" r="56"></circle>
+            <circle class="score-ring-progress" id="scoreRingProgress" cx="69.5" cy="69.5" r="56"></circle>
+          </svg>
+          <span id="scoreValue">--</span>
+        </div>
+        <div class="score-copy">
+          <span id="scoreStatus" class="status-chip">Scanning</span>
+          <h2 id="pageTitle">Reading current page</h2>
+          <p id="summaryText">GEO Inspector is checking content clarity, entities, schema, AI accessibility, citation readiness, and GEO signals.</p>
+        </div>
+      </section>
+
+      <nav class="tabs" aria-label="Report sections">
+        <button class="tab is-active" data-tab="overview" type="button">Overview</button>
+        <button class="tab" data-tab="issues" type="button">Issues</button>
+        <button class="tab" data-tab="opportunities" type="button">Opportunities</button>
+        <button class="tab" data-tab="entities" type="button">Entities</button>
+        <button class="tab" data-tab="schema" type="button">Schema</button>
+      </nav>
+
+      <section id="overview" class="tab-panel is-active">
+        <div class="metric-grid" id="metricGrid"></div>
+      </section>
+
+      <section id="issues" class="tab-panel">
+        <div class="list" id="issuesList"></div>
+      </section>
+
+      <section id="opportunities" class="tab-panel">
+        <div class="list" id="opportunitiesList"></div>
+      </section>
+
+      <section id="entities" class="tab-panel">
+        <div class="chip-cloud" id="entityList"></div>
+      </section>
+
+      <section id="schema" class="tab-panel">
+        <div class="list" id="schemaList"></div>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
