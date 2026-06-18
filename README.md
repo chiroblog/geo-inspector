@@ -118,3 +118,4 @@ GEO Inspector runs locally in your browser. The current version does not send pa
 ## Version
 
 Current version: `1.0.0`
+Built by Tushar
